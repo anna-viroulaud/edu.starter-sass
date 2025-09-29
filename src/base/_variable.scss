@@ -1,0 +1,18 @@
+@use 'variable' as *;
+
+:root {
+  @each $color, $shades in $colors {
+    // Créer une variable css --clr-[$color]:[$value]
+    @each $shade, $value in $shades {
+      --clr-#{$color}-#{$shade}: #{$value};
+    }
+  }
+
+  @each $font, $value in $fontSizes {
+    --fs-#{$font}: #{$value};
+  }
+
+  @each $weight in $weights {
+    --fw-#{$weight}: #{$weight};
+  }
+}
